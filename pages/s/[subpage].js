@@ -92,6 +92,9 @@ export async function getStaticProps({ params: { subpage } }) {
     Object.values(page.block).forEach(block => {
       if (!allowed && block.value && block.value.space_id) {
         allowed = NOTION_SPACES_ID.includes(block.value.space_id)
+        console.log("-----------------------------", allowed)
+        console.log("NOTION_SPACES_ID:", NOTION_SPACES_ID)
+        console.log("block.value.space_id:", block.value.space_id)
       }
     })
     return allowed
